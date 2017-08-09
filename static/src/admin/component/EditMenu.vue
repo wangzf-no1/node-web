@@ -19,7 +19,7 @@
 				<el-input placeholder="用于在菜单显示，并非对应页面标题" v-if="!main" v-model="value.label"></el-input>
 			</el-form-item>
 			<el-form-item label="页面类型" v-if="!main">
-				<el-select v-model="value.id" placeholder="请选择">
+				<el-select v-model="value.type" placeholder="请选择">
 					<el-option v-for="item in types" :key="item.value" :label="item.label" :value="item.value"></el-option>
 				</el-select>
 			</el-form-item>

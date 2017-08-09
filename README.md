@@ -1,6 +1,7 @@
 # node-web
 
-用koa2 vue2 开发的网站内容管理系统[https://github.com/wjs/node-blog](https://github.com/wjs/node-blog) 
+用koa2 vue2 开发的网站内容管理系统[demo](http://47.52.76.201:3006/)    [后台地址](http://47.52.76.201:3006/admin/) admin  admin
+ 
 
 练手项目，在[https://github.com/wjs/node-blog](https://github.com/wjs/node-blog)基础上改的，
 Node.js 网站信息管理系统，后端 Koa2 + mongodb，博客后台管理页 Vue2 + [element](https://github.com/ElemeFE/element)，使用 [wangEditor](http://www.wangeditor.com/) 编辑内容，

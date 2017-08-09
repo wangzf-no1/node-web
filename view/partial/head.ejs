@@ -1,0 +1,14 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title><%= site.seo.title %></title>
+  <meta name="keywords" content="<%= site.seo.keywords %>">
+  <meta name="description" content="<%= site.seo.description %>">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"/>
+  <% if (staticUrl['admin.css']) {%>
+  <link rel="stylesheet" href="/static/<%= staticUrl['admin.css'] %>">
+  <% } %>
+  <% if (staticUrl['app.css']) {%>
+  <link rel="stylesheet" href="/static/<%= staticUrl['app.css'] %>">
+  <% } %>
+</head>

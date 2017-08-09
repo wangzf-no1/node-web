@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<% include partial/head %>
+
+	<body>
+		<% include partial/nav %>
+
+		<section class=" indexBanner swiper-container">
+			<div class="swiper-wrapper">
+				<% home.banner.forEach(function (item, index) {%>
+				<div class="swiper-slide item" style="background-color:<%= item.bg %>;background-image:url(<%=item.img%>)">
+					<div class="slogan">
+						<h3><%=item.title%></h3>
+						<p>
+							<%=item.info%>
+						</p>
+						<%if(item.href){%>
+						<a href="<%=item.href%>">查看详情</a>
+						<%}%>
+
+					</div>
+				</div>
+				<%})%>
+			</div>
+			<!-- Add Pagination   swiper-pagination-white -->
+			<div class="swiper-pagination "></div>
+			<!-- Add Navigation swiper-button-white-->
+			<div class="swiper-button-prev "></div>
+			<div class="swiper-button-next "></div>
+		</section>
+		<% if(home.fastlink){%>
+		<section class="fastlink">
+			<div class="inner">
+				<ul>
+					<% home.fastlink.forEach(function (item, index) {%>
+					<li class="item<%=index%>">
+						<a <%if(item.href){%>
+							href="
+							<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+							<%}%> style="background-color:
+							<%= item.bg %>;background-image:url(
+							<%=item.img%>)">
+							<h3><%=item.title%></h3>
+							<%=item.info%>
+						</a>
+						<%})%>
+				</ul>
+			</div>
+		</section>
+		<% }%>
+		<% if(home.sift){%>
+		<section class="sift ">
+			<div class="inner clearfix">
+				<h2>精选服务</h2>
+				<ul>
+					<% home.sift.forEach(function (item, index) {%>
+					<li class="item<%=index%>">
+						<a <%if(item.href){%>
+							href="
+							<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+							<%}%> style="background-color:
+							<%= item.bg %>;background-image:url(
+							<%=item.img%>)">
+							<h3><%=item.title%></h3>
+							<p>
+								<%=item.info%>
+							</p>
+							<p class="fee"><em><%=item.fee%></em>元起</p>
+							<span>查看详情</span>
+
+						</a>
+
+						<%})%>
+				</ul>
+			</div>
+
+		</section>
+		<%}%>
+		<% if(home.ad){%>
+		<section class="ad">
+			<div class="inner clearfix">
+				<% home.ad.forEach(function (item, index) {%><a class="type<%= index%3 %>" <%if(item.href){%>
+					href="
+					<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+					<%}%> title="
+					<%=item.title%>">
+					<img src="<%=item.img%>" alt="<%=item.info%>" />
+				</a><%})%>
+			</div>
+
+		</section>
+		<%}%>
+		<% if(home.news){%>
+		<section class="indexNews ">
+			<div class="inner clearfix">
+				<h2>企业资讯</h2>
+				<ul>
+					<% home.news.forEach(function (item, index) {%>
+					<li class="item<%=index%>"><div class="box">
+						<img src="<%=item.img%>" /><br />
+						<em><%=item.tag%></em><br />
+						<a <%if(item.href){%>
+							href="
+							<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+							<%}%> >
+							<%=item.title%>
+						</a><br />
+						<%=item.info%><br />
+						<i><%=item.day%></i>
+						</div>
+					</li>
+					<%})%>
+				</ul>
+			</div>
+
+		</section>
+		<%}%>
+		<% if(home.friend){%>
+
+		<section class="friend">
+			<div class="inner">
+				<h2>合作伙伴</h2>
+				<ul>
+					<% home.friend.forEach(function (item, index) {%>
+					<li class="item<%=index%>">
+						<a <%if(item.href){%>
+							href="
+							<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+							<%}%> style="background-color:
+							<%= item.bg %>;background-image: url(
+							<%=item.img%>);">
+						</a>
+					</li>
+					<%})%>
+				</ul>
+			</div>
+
+		</section>
+		<%}%>
+		<% if(home.ad2){%>
+
+		<section class="ad2">
+			<div class="inner clearfix">
+				<% home.ad2.forEach(function (item, index) {%>
+				<a <%if(item.href){%>
+					href="
+					<%= typeof item.href=='string'?item.href:`/posts/${item.href.page}` %>"
+					<%}%> title="
+					<%=item.title%>">
+					<img src="<%=item.img%>" alt="<%=item.info%>" />
+				</a>
+				<%})%>
+			</div>
+
+		</section>
+		<%}%>
+
+		<% include partial/foot %>
+
+		<% include partial/script %>
+	</body>
+
+</html>

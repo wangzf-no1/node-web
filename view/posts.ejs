@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<% include partial/head %>
+<body>
+  <% include partial/nav %>
+  <main id="main" class="list-page">
+    <div class="main-inner">
+      <ul class="post-list">
+        <% posts.forEach(function (item, index) {%>
+        <li class="post-item">
+        	<img src="<%= item.img%>" />
+        	<title><%= item.title %></title>
+        	<span class="after">优惠价<em><%= item.before%></em></span> 
+        	<span class="before">市场价<%= item.before%></span></div>
+          <div class="about"><%= item.about %></div>
+		        <% item.tags.forEach(function (item, index) {%>
+		        	<span class="tag"><%= item %></span>
+		        <% }) %>
+          
+
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </main>
+
+  <% if (pageConfig) {%>
+  <script>window.pageConfig = <%- pageConfig %></script>
+  <% } %>
+  <% include partial/script %>
+</body>
+</html>

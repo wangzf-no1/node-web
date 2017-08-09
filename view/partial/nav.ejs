@@ -1,0 +1,42 @@
+<nav class="">
+	<div class="inner">
+		<a class="menuBtn iconfont">&#xe63d;</a>
+		<a class="logo " href="/">
+			<%= site.sitename %>
+		</a>
+		<ul class="menu">
+			<a class="logo" href="/">
+			<%= site.sitename %>
+		</a>
+			<li class="li">
+				<a href="/">首页</a>
+			</li>
+			<% menu.forEach(function (item, index) { if(item.disable){  %>
+			<li class="li">
+				<a href="/posts/<%= item.page %>">
+					<%= item.label%>
+				</a>
+				<ul class="subMenu" >
+					<% item.children.forEach(function (item2, index2) { if(item2.disable){ %>
+					<li class="subLi size<%= item2.children.length%>">
+						<a href="/posts/<%= item2.page %> ">
+							<%= item2.label%>
+						</a>
+						<ul class="againMenu ">
+							<% item2.children.forEach(function (item3, index3) { if(item3.disable){ %>
+							<li class="againLi">
+								<a href="/posts/<%= item3.page %>">
+									<%= item3.label%>
+								</a>
+							</li>
+							<%} }) %>
+						</ul>
+					</li>
+					<%} }) %>
+				</ul>
+			</li>
+			<% } }); %>
+
+		</ul>
+	</div>
+</nav>

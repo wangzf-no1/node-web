@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<% include partial/head %>
+
+	<body>
+		<% include partial/nav %>
+		<!--<a href="/">首页</a> > <%if(post.parent!='root'){%> <a href="/posts/<%=post.type%>list/"><%=post.parent%></a> ><%}%> <a>服务详情</a>-->
+		<section class=" page product">
+			<div class="inner">
+				<% if (post) {%>
+<%if(post.img.length){%>
+				<img src="<%= post.img%>" class="img" />
+				<%}%>
+				
+				<h1><%= post.title %></h1>	
+<p><%= post.about %></p>
+<div class="price">价格<em><strong><%= post.min %></strong>元</em></div>
+服务类型<% post.price.forEach(function (item, index) {%>
+					<a class="priceItem" value='<%= item.value%>'>
+						<%= item.name%>
+					</a>
+					<% }) %>
+				<div class="clearfix tab" id="detailTab">
+					<ul class="head clearfix">
+						<% post.texts.forEach(function (item, index) {%>
+						<li tab-to="<%= index%>" class="<% if(index==0){ %> active <% } %>">
+							<%= item.name%>
+						</li>
+						<% }) %>
+					</ul>
+
+					<ul class="body">
+						<% post.texts.forEach(function (item, index) {%>
+						<li class="clearfix  <%= (index==0?'active':'')+' '+(index%2?'odd':'even' )%>">
+							<h3 tab-to="<%= index%>" class="btn"><%= item.name%></h3>
+							<div class="txt">
+								<%- item.value %>
+							</div>
+						</li>
+						<% }) %>
+					</ul>
+
+				</div>
+
+				<% } %>
+
+			</div>
+		</section>
+		<% include partial/foot %>
+
+		<% if (pageConfig) {%>
+		<script>
+			window.pageConfig = <%- pageConfig %>
+		</script>
+		<% } %>
+		<% include partial/script %>
+
+	</body>
+
+</html>

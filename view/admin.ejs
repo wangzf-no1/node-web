@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title></title>
+  <% if (staticUrl['admin.css']) {%>
+  <link rel="stylesheet" href="/static/<%= staticUrl['admin.css'] %>">
+  <% } %>
+  <% if (staticUrl['app.css']) {%>
+  <link rel="stylesheet" href="/static/<%= staticUrl['app.css'] %>">
+  <% } %>
+</head><body>
+  <div id="root">
+    <router-view></router-view>
+  </div>
+
+  <% include partial/script %>
+
+</body>
+</html>

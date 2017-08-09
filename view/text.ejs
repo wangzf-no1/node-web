@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<% include partial/head %>
+
+	<body>
+		<% include partial/nav %>
+		<!--<a href="/">首页</a> > <%if(post.parent!='root'){%> <a href="/posts/<%=post.type%>list/"><%=post.parent%></a> ><%}%> <a>服务详情</a>-->
+		<section class=" page text">
+			<div class="inner">
+				<% if (post) {%>
+<%if(post.img.length){%>
+				<img src="<%= post.img%>" class="img" />
+				<%}%>
+				
+				<h1><%= post.title %></h1>
+				<p class="about">
+					<%= post.about %>
+				</p>
+				<div class="txt">
+					<% post.texts.forEach(function (item, index) { %>
+					<%if(item.name.length){%>
+					<h2><%= item.name%></h2>
+					<%}%>
+					<%- item.value %>
+					<% }) %>
+				</div>
+				<% } %>
+
+			</div>
+		</section>
+		<% include partial/foot %>
+
+		<% if (pageConfig) {%>
+		<script>
+			window.pageConfig = <%- pageConfig %>
+		</script>
+		<% } %>
+		<% include partial/script %>
+
+	</body>
+
+</html>

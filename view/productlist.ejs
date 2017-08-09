@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<% include partial/head %>
+
+	<body>
+		<% include partial/nav %>
+		<section class=" page list productlist">
+			<div class="inner">
+				<% if (post) {%>
+
+				<ul class="">
+					<% post.data.forEach(function (p, pi) {%>
+					<li class="item<%=pi%> m<%=pi%2 %> ">
+
+						<a href="/posts/<%= p._id%> " class="clearfix">
+							<div class="img"><img src="<%= p.img%>" /></div>
+							<span><em><%= p.min%></em>元起</span>
+							<h3><%= p.title%> </h3>
+							<p>
+								<%= p.about%>
+							</p>
+
+						</a>
+					</li>
+					<% }) %>
+				</ul>
+				<% } %>
+
+			</div>
+		</section>
+
+		<% include partial/foot %>
+
+		<% if (pageConfig) {%>
+		<script>
+			window.pageConfig = <%- pageConfig %>
+		</script>
+		<% } %>
+		<% include partial/script %>
+
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<div class="foot">
+	<div class="inner clearfix">
+
+		<div class="contact">
+			<span class="code">
+					<img src="<%=site.code%>" /><br />
+					关注<%=site.sitename%>公众号
+				</span>
+			<div class="tel">
+				<strong>服务热线</strong>
+				<em><%=site.tel%></em> 服务时间
+				<br />
+				<%=site.office%>
+			</div>
+		</div>
+		<% if(site.fastlink){site.fastlink.forEach(function (item, index) {  %>
+		<strong><%= item.label%></strong><br />
+		<% item.children.forEach(function (item2, index2) {%>
+		<a href="/posts/<%= item2.page %>">
+			<%= item2.label%>
+		</a>
+		<% }) %>
+		<br />
+		<%  });} %>
+
+	</div>
+	<div class="copyright">
+		<div class="inner">
+			<%= site.copyright%>
+
+		</div>
+
+	</div>
+</div>
+</head>

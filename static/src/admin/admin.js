@@ -13,6 +13,9 @@ import Home from './component/Home'
 import Common from './component/Common'
 
 
+import Test from './Test'
+
+
 Vue.use(VueResource)
 Vue.use(VueRouter)
 
@@ -23,7 +26,11 @@ const router = new VueRouter({
   routes: [{
     path: '/login',
     component: Login,
-  }, {
+  },
+  {
+    path: '/test',
+    component: Test,
+  },{
     path: '/init',
     component: InitSite,
   }, {

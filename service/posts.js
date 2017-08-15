@@ -10,6 +10,7 @@ const posts = {
     //const pageSize = filter.pageSize || 10
     //delete filter.pageIndex
     //delete filter.pageSize
+    console.log(filter)
     const cursor = await mongoClient.db(config.mongodb.db).collection(collectionName)
     .find(filter,{texts:false,seo:false})
     //.sort({ createtime: -1 })

@@ -181,7 +181,7 @@ posts
 		try {
 			if(isList) {
 				post = await postService.getList(ctx.mongo, {
-					parent: {
+					'menu.parent': {
 						$in: [ctx.params.id]
 					}
 				})
@@ -205,7 +205,7 @@ posts
 			return ctx.redirect('/')
 		}
 
-		
+
 
 		await ctx.render(page.menu.type || 'product', {
 			post,

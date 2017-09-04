@@ -20,7 +20,7 @@ new Swiper('.indexBanner', {
 	nextButton: '.indexBanner .swiper-button-next',
 	prevButton: '.indexBanner .swiper-button-prev',
 	autoplay: 3000
-});
+})   ; 
 
 /*   new Swiper('.fastlink .inner', {
         pagination: '.fastlink .inner .swiper-pagination',
